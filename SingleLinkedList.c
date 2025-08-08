@@ -77,6 +77,7 @@ void deleteAtBeginning(struct Node **head)
     struct Node *temp = *head;
     *head = (*head)->next;
     temp->next = NULL;
+    size--;
     free(temp);
 }
 
@@ -94,6 +95,7 @@ void deleteAtEnd(struct Node **head)
     }
     struct Node *del = temp->next;
     temp->next = NULL;
+    size--;
     free(del);
 }
 
@@ -122,6 +124,7 @@ void deleteAtPosition(struct Node **head, int pos)
     }
     struct Node *tmp = temp->next;
     temp->next = temp->next->next;
+    size--;
     free(tmp);
 }
 
